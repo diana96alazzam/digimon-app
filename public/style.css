@@ -1,0 +1,27 @@
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+section, form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    /* background-color: rgb(177, 177, 177); */
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.116);
+    margin: 1vw;
+    padding: 1vw;
+}

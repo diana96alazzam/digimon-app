@@ -28,6 +28,8 @@ app.get('/digimons', viewFavs)
 app.get('/digimons/:char_id', viewOneDigimon);
 app.put('/update/:char_id', updateDigimon);
 app.delete('/delete/:char_id', deleteDigimon);
+app.use('*', notFoundHandler);
+
 
 function viewDigimons(request, response) {
     const apiUrl = 'https://digimon-api.herokuapp.com/api/digimon';
@@ -89,9 +91,6 @@ function deleteDigimon (request, response){
     });
 }
 
-
-
-
 function Dig(character) {
     this.name = character.name;
     this.img = character.img;
@@ -99,22 +98,9 @@ function Dig(character) {
 }
 
 
-
-
-
-
-
-
-app.use('*', notFoundHandler);
-
-
-
-
-
 client.connect().then(() => {
     app.listen(PORT, () => console.log(`up and running on port ${PORT}`));
 })
-
 
 
 function errorHandler(error, request, response) {
