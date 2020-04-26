@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digimon details</title>
+</head>
+<body>
+    <header>
+        <h1>Digimon Details</h1>
+    </header>
+    <main>
+        <section>
+            <img src="<%=char.image%>">
+            <p><%=char.name%></p>
+            <p><%=char.level%></p>
+
+            <form action="/update/<%=char.id%>?_method=PUT" method="POST">
+                <input type="text" name="name" value="<%=char.name%>">
+                <input type="text" name="level" value="<%=char.level%>">                  
+                <button type="submit">Update</button>
+            </form>
+
+            <form action="/delete/<%=char.id%>?_method=DELETE" method="POST"> 
+                <button type="submit">Delete</button>
+            </form>
+
+        </section>
+
+        <!-- <form action="/digimons/<%%>">
+
+        </form> -->
+
+    </main>
+    <footer>
+
+    </footer>
+    
+</body>
+</html>

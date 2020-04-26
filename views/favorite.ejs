@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Favorite Page</h1>
+
+    </header>
+    <main>
+        <%list.forEach((char)=> {%>
+            <section>
+                <form action="/add" method="POST">
+                    <input type="hidden" name="img" value="<%=char.image%>">
+                    <img src="<%=char.image%>">
+                    <input type="hidden" name="name" value="<%=char.name%>">
+                    <p><%=char.name%></p>
+                    <input type="hidden" name="level" value="<%=char.level%>">                  
+                    <p><%=char.level%></p>
+                </form>
+                <a href="/digimons/<%=char.id%>">View details</a>
+            </section>
+        <%})%>
+
+    </main>
+    <footer>
+
+    </footer>
+    
+</body>
+</html>
